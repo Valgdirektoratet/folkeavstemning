@@ -1,0 +1,117 @@
+version: "3.8"
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0
+    container_name: folkeavstemning_keycloak
+    ports:
+      - "54500:8443"
+    volumes:
+      - ./docker/keycloak-realm:/opt/keycloak/data/import
+      - ./docker/keycloak-config:/opt/keycloak/standalone/configuration
+      - ./docker/keycloak-export:/opt/keycloak/data/export
+      - ./docker/cert:/etc/folkeavstemning/dev/cert
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: >
+      start-dev
+      --import-realm
+      --http-port=0
+      --https-key-store-file=/etc/folkeavstemning/dev/cert/dev-localhost-docker.p12
+      --https-key-store-password=changeit
+      --spi-truststore-file-file=/etc/folkeavstemning/dev/cert/dev-localhost-docker.p12
+      --spi-truststore-file-password=changeit
+      --spi-truststore-file-hostname-verification-policy=STRICT
+
+  folkeavstemning_postgres:
+    build:
+      context: ./docker/postgres-secure
+    container_name: folkeavstemning_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=folkeavstemning
+    ports:
+      - "54020:5432"
+    command: >
+      postgres
+      -c ssl=on
+      -c ssl_cert_file=/var/lib/postgresql/cert/server.crt
+      -c ssl_key_file=/var/lib/postgresql/cert/server.key
+      -c ssl_passphrase_command='echo changeit'
+
+  resultat_postgres:
+    build:
+      context: ./docker/postgres-secure
+    container_name: resultat_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=resultat
+    ports:
+      - "54220:5432"
+    command: >
+      postgres
+      -c ssl=on
+      -c ssl_cert_file=/var/lib/postgresql/cert/server.crt
+      -c ssl_key_file=/var/lib/postgresql/cert/server.key
+      -c ssl_passphrase_command='echo changeit'
+
+  manntall_postgres:
+    build:
+      context: ./docker/postgres-secure
+    container_name: manntall_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=manntall
+    ports:
+      - "54320:5432"
+    command: >
+      postgres
+      -c ssl=on
+      -c ssl_cert_file=/var/lib/postgresql/cert/server.crt
+      -c ssl_key_file=/var/lib/postgresql/cert/server.key
+      -c ssl_passphrase_command='echo changeit'
+
+  seq:
+    image: datalust/seq:latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_CERTIFICATES_DEFAULTPASSWORD=changeit
+    ports:
+      - "54600:80"
+      - "54601:5341"
+
+  wiremock:
+    image: wiremock/wiremock:latest
+    ports:
+      - "54700:54700"
+    command: [ "--port=54700", "--disable-banner" ]
+    volumes:
+      - ./docker/wiremock/mappings:/home/wiremock/mappings
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "54610:9090"
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./docker/cert/dev-localhost-docker.key:/etc/cert/dev-localhost-docker.key
+      - ./docker/cert/dev-localhost-docker.crt:/etc/cert/dev-localhost-docker.crt
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+      image: grafana/grafana-enterprise
+      ports:
+        - "54620:3000"
+      volumes:
+        - ./docker/grafana:/var/lib/grafana
+        - ./docker/cert/dev-localhost-docker.key:/etc/grafana/dev-localhost-docker.key
+        - ./docker/cert/dev-localhost-docker.crt:/etc/grafana/dev-localhost-docker.crt
+      environment: 
+        - "GF_SERVER_PROTOCOL=https" 
+        - "GF_SERVER_CERT_KEY=/etc/grafana/dev-localhost-docker.key" 
+        - "GF_SERVER_CERT_FILE=/etc/grafana/dev-localhost-docker.crt" 
+            

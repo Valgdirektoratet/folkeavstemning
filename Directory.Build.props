@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>warnings</Nullable>
+    <TargetFramework>net8.0</TargetFramework>
+    <WarningsAsErrors>true</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Company>Valgdirektoratet</Company>
+    <Authors>Valgdirektoratet</Authors>
+    <Product>Folkeavstemning</Product>
+    <Copyright>Copyright © Valgdirektoratet 2023</Copyright>
+  </PropertyGroup>
+</Project>

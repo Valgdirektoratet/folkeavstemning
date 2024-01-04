@@ -1,0 +1,28 @@
+{
+  "id" : "9046f0ff-c66f-4976-8d5f-a43c7f316843",
+  "name" : "folkeregisteret_api_offentligutenhjemmel_v1_uttrekk_tilpasset",
+  "request" : {
+    "url" : "/folkeregisteret/api/offentligutenhjemmel/v1/uttrekk/tilpasset",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"foedselsaarTilOgMed\":\"2008\",\"kommunenummer\":{\"bostedskommunenummer\":\"4204\"},\"personstatustyper\":[\"bosatt\"]}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"jobbId\":\"bde58c8b-6ddd-4a90-82a7-84d4237e82d4\"}",
+    "headers" : {
+      "date" : "Wed, 11 Oct 2023 11:31:40 GMT",
+      "content-type" : "application/json",
+      "set-cookie" : "14269d904afb422aaeb6366448947b9c=13d0e93c8b4d73a978969fe138ea95da; path=/; HttpOnly; Secure",
+      "Expires" : "Thu, 01 Dec 1994 16:00:00 GMT",
+      "Strict-Transport-Security" : "max-age=16070400; includeSubDomains",
+      "Cache-Control" : "no-store, no-cache"
+    }
+  },
+  "uuid" : "9046f0ff-c66f-4976-8d5f-a43c7f316843",
+  "persistent" : true,
+  "insertionIndex" : 25
+}

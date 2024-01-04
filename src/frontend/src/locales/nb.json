@@ -1,0 +1,121 @@
+{
+	"page": {
+		"title": "Folkeavstemning"
+	},
+	"aria": {
+		"aktive_folkavstemninger": "Aktive folkeavstemninger",
+		"logg_ut": "Logg ut",
+		"vis_mer_informasjon": "Vis mer informasjon",
+		"vis_mindre_informasjon": "Vis mindre informasjon",
+		"navigasjon": "Meny"
+	},
+	"nav": {
+		"logg_ut": "Logg ut",
+		"hopp_til_innhold": "Hopp til innhold"
+	},
+	"button": {
+		"lukk": "Lukk",
+		"avbryt": "Avbryt",
+		"logg_inn": "Logg inn med ID-porten",
+		"gi_meg_mer_tid": "Gi meg mer tid",
+		"avgi_stemme": "Avgi stemme",
+		"gå_til_avstemning": "Gå til avstemning",
+		"send_inn_stemme": "Send inn stemme",
+		"avlegger_stemme": "Avlegger stemme..."
+	},
+	"stemmerett": {
+		"har_ikke_stemmerett": "Du har ikke stemmerett i denne folkeavstemningen",
+		"har_stemmerett": "Du har stemmerett i denne folkeavstemningen. Du kan avlegge stemme fra 22. januar.",
+		"har_stemt": "Du har avgitt stemme i denne folkeavstemningen",
+		"send_inn_stemme_på_nytt": "Send inn stemmen på nytt",
+		"avstemning_lukket": "Avstemningen er avsluttet"
+	},
+	"session": {
+		"inaktiv_dialog": {
+			"dialog_tittel": "Din sesjon er i ferd med å løpe ut",
+			"dialog_beskrivelse": "Din sesjonstid er snart utløpt. Vennligst velg om du ønsker å få mer tid eller logge ut"
+		},
+		"logget_ut_dialog": {
+			"dialog_tittel": "Logget ut",
+			"dialog_beskrivelse": "Du er logget ut grunnet inaktivitet."
+		}
+	},
+	"landing_view": {
+		"jumbotron_beskrivelse_del_1": "På denne siden kan alle som har stemmerett til folkeavstemningene i tidligere Søgne kommune eller tidligere Songdalen kommune, stemme elektronisk. For å stemme må du logge inn med ID-porten (MinID, BankID, Buypass eller Commfides).",
+		"jumbotron_beskrivelse_del_2": "Det avholdes to folkeavstemninger. Én i tidligere Søgne kommune og én i tidligere Songdalen kommune. Når du logger inn kommer du direkte til den avstemningen du har stemmerett i.",
+		"jumbotron_beskrivelse_del_3": "Du kan stemme elektronisk i perioden fra 22. januar kl. 09.00 til 2. februar kl. 21.00. Hva du stemmer skal være hemmelig, du er selv ansvarlig for å stemme alene. Dersom du grunnet en funksjonsnedsettelse ikke kan stemme alene, kan du peke ut en person som kan hjelpe deg. Les mer om gjennomføringen av folkeavstemningene på {0}",
+		"jumbotron_link_tekst": "valg.no/folkeavstemning",
+		"hvordan_skaffe_elektronisk_id": "Hvordan skaffe elektronisk ID?"
+	},
+	"aktive_folkeavstemninger": {
+		"overskrift": "Du har ikke stemmerett i noen folkeavstemninger | Du har stemmerett i èn folkeavstemning | Du har stemmerett i {count} folkeavstemninger"
+	},
+	"stemmegivning_view": {
+		"avgitt_stemme_dialog": {
+			"dialog_tittel": "Du har avgitt stemme i"
+		},
+		"bekreft_stemme_dialog": {
+			"dialog_tittel": "Bekreft valg",
+			"dialog_beskrivelse_del_1": "Bekreft at du ønsker å stemme på følgende alternativ:",
+			"dialog_beskrivelse_del_2": "Du vil ikke kunne stemme på nytt."
+		},
+		"kunne_ikke_avlegge_stemme_dialog": {
+			"dialog_tittel": "Kunne ikke avlegge stemme",
+			"lagret_lokalt_beskrivelse": "Vi kunne ikke motta stemmen din akkurat nå. Stemmen din er lagret lokalt på din enhet. Prøv igjen senere.",
+			"ukjent_feil_beskrivelse": "Det har skjedd en uventet feil. Prøv igjen senere eller med en annen enhet.",
+			"avstemning_lukket": "Avstemningen er avsluttet",
+			"avstemning_ikke_startet": "Avstemningen er ikke startet",
+			"kan_ikke_lage_stemmepakke": "Kunne ikke lage stemmepakke. Kontakt Valgdirektoratet for bistand",
+			"ugyldig_stemme": "Ugyldig stemme. Kontakt Valgdirektoratet for bistand",
+			"har_ikke_stemmerett": "Du har ikke stemmerett i denne folkeavstemningen",
+			"har_allerede_stemt": "Du har allerede avlagt stemme i denne folkeavstemningen"
+		},
+
+		"stemmegivning": "Stemmegivning",
+		"forside": "Forside",
+		"du_har_stemmerett_i": "Du har stemmerett i {0}.",
+		"viktig_informasjon": "Du kan kun stemme én gang. Det er viktig at du ikke lukker nettleseren eller kobler fra internett før du får bekreftet at stemmen er registrert.",
+		"ikke_stemmerett_informasjon": "På denne siden kan alle som har stemmerett i {0}, avlegge sin stemme elektronisk.",
+		"ikke_stemmerett_les_mer": "Les mer om gjennomføringen av folkeavstemningen på",
+		"ikke_stemmerett_link": "valg.no/folkeavstemning",
+		"avgi_stemme_i_mellom": "Du kan avgi din stemme elektronisk mellom {0} og {1}"
+	},
+	"cookie_erklæring_view": {
+		"tittel": "Valgdirektoratets erklæring om informasjonskapsler",
+		"undertittel": "Her finner du en oversikt over Valgdirektoratets bruk av informasjonskapsler for folkeavstemninger.",
+		"informasjon1": "Informasjonskapsler (cookies) er små tekstfiler som plasseres på din datamaskin når du laster ned en nettside. Valgdirektoratet bruker i dag informasjonskapsler til følgende formål:",
+		"cookie_usage": {
+			"usecase1": "Autentisering og innlogging",
+			"usecase2": "Sikkerhet"
+		},
+		"informasjon2": "Når du logger inn i folkeavstemningsløsningen installerer vi informasjonskapsler som er nødvendige for at du skal kunne benytte deg av nettsidene våre.",
+		"informasjon3": "Bruk av cookies reguleres i ",
+		"informasjon3_link": "ekomloven § 2-7b.",
+		"tittel2": "Oversikt over informasjonskapsler",
+		"cookie1": {
+			"tittel": "Session Cookie",
+			"beskrivelse": "Denne cookien brukes for innlogging til folkeavstemningsløsningen. Cookien slettes idet nettleserøkten avsluttes eller du logger ut av løsningen."
+		}
+	},
+	"footer": {
+		"tittel": "Kontakt",
+		"hjelpetekst": "Har du behov for hjelp? Kontakt oss på:",
+		"epost": "Epost:",
+		"om_folkeavstemninger": "Om folkeavstemninger",
+		"linkToKommune": "Kommunelink",
+		"linkToPersonvernserklæring": "Personvernserklæring",
+		"telefon": "Telefon: {0}",
+		"informasjonskapsler": "Informasjonskapsler"
+	},
+	"label": {
+		"vis_mindre": "Vis mindre",
+		"vis_mer": "Vis mer"
+	},
+	"språkvalg": {
+		"språk": {
+			"nb": "Bokmål",
+			"nn": "Nynorsk"
+		},
+		"tittel": "Språk"
+	}
+}

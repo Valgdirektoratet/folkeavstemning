@@ -1,0 +1,29 @@
+{
+  "id" : "92e33781-bd53-4897-a429-7d7b773de5a8",
+  "name" : "token",
+  "request" : {
+    "url" : "/token",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"access_token\":\"abc\",\"token_type\":\"Bearer\",\"expires_in\":119,\"scope\":\"krr:global/kontaktinformasjon.read folkeregister:deling/offentligutenhjemmel\"}",
+    "headers" : {
+      "vary" : "origin,access-control-request-method,access-control-request-headers,accept-encoding",
+      "x-content-type-options" : "nosniff",
+      "x-xss-protection" : "0",
+      "cache-control" : "no-cache, no-store, max-age=0, must-revalidate",
+      "pragma" : "no-cache",
+      "expires" : "0",
+      "strict-transport-security" : "max-age=16070400; includeSubDomains",
+      "x-frame-options" : "SAMEORIGIN",
+      "content-security-policy" : "default-src 'self';",
+      "content-type" : "application/json",
+      "date" : "Wed, 11 Oct 2023 11:12:36 GMT",
+      "set-cookie" : [ "bd2a0a6264f5ef94ed330d8ed618596b=c4a6b4521973ad894ae0888a1399df2f; path=/; HttpOnly; Secure; SameSite=None", "BIGipServer~DigDir-Test~pool_digdir_kt_maskinporten_https=rd3567o00000000000000000000ffff8b6920d5o443; path=/; Httponly; Secure" ]
+    }
+  },
+  "uuid" : "92e33781-bd53-4897-a429-7d7b773de5a8",
+  "persistent" : true,
+  "insertionIndex" : 20
+}

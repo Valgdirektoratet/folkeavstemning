@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Folkeavstemning.Backend", "src\Folkeavstemning\Folkeavstemning.Backend\Folkeavstemning.Backend.csproj", "{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stemmemottak.Frontend", "src\Stemmemottak\Stemmemottak.Frontend\Stemmemottak.Frontend.csproj", "{CB3B7D40-0721-43EF-A220-DF8D1B783A3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionFiles", "_SolutionFiles", "{7E57F610-338A-4411-93DA-6E95D4F97BB1}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Folkeavstemning.Manntall", "src\Manntall\Folkeavstemning.Manntall\Folkeavstemning.Manntall.csproj", "{9B0DA175-605D-4081-8263-CBEF9C271611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manntall.Client", "src\Manntall\Manntall.Client\Manntall.Client.csproj", "{0232AB55-E8F5-47D0-973F-E3F8396ED856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Folkeavstemning.Frontend", "src\Folkeavstemning\Folkeavstemning.Frontend\Folkeavstemning.Frontend.csproj", "{2E0DCB4B-A07B-49B5-A318-A756848F62D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docker", "_Docker", "{0628B656-35D7-46C4-9B5D-2020B7BEC3FA}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keycloak", "Keycloak", "{1954EFD5-1D3B-4017-9869-014FD88CAE94}"
+	ProjectSection(SolutionItems) = preProject
+		docker\keycloak-realm\idporten.json = docker\keycloak-realm\idporten.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared.csproj", "{0AD057D6-1479-4E34-A78E-21D83037C5FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Folkeavstemning", "Folkeavstemning", "{C76C4C2C-3CA8-4330-9197-8775441B05F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Manntall", "Manntall", "{0BF24FBB-55B4-4A21-9289-481F75F4E367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stemmemottak", "Stemmemottak", "{62C0F91C-D485-40FE-AA6F-DD945B960F92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7023BFB6-E7C8-49F7-96DE-C1D1A9C52F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stemmemottak.Backend", "src\Stemmemottak\Stemmemottak.Backend\Stemmemottak.Backend.csproj", "{1A69D8A2-3EDE-4A27-BF46-34E036599C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHasher", "src\Tools\PasswordHasher\PasswordHasher.csproj", "{CDD2A370-242C-428C-8C19-96284207850A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3B7D40-0721-43EF-A220-DF8D1B783A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3B7D40-0721-43EF-A220-DF8D1B783A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3B7D40-0721-43EF-A220-DF8D1B783A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3B7D40-0721-43EF-A220-DF8D1B783A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0DA175-605D-4081-8263-CBEF9C271611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0DA175-605D-4081-8263-CBEF9C271611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0DA175-605D-4081-8263-CBEF9C271611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0DA175-605D-4081-8263-CBEF9C271611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0232AB55-E8F5-47D0-973F-E3F8396ED856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0232AB55-E8F5-47D0-973F-E3F8396ED856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0232AB55-E8F5-47D0-973F-E3F8396ED856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0232AB55-E8F5-47D0-973F-E3F8396ED856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E0DCB4B-A07B-49B5-A318-A756848F62D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0DCB4B-A07B-49B5-A318-A756848F62D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0DCB4B-A07B-49B5-A318-A756848F62D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0DCB4B-A07B-49B5-A318-A756848F62D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD057D6-1479-4E34-A78E-21D83037C5FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD057D6-1479-4E34-A78E-21D83037C5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD057D6-1479-4E34-A78E-21D83037C5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD057D6-1479-4E34-A78E-21D83037C5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A69D8A2-3EDE-4A27-BF46-34E036599C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A69D8A2-3EDE-4A27-BF46-34E036599C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A69D8A2-3EDE-4A27-BF46-34E036599C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A69D8A2-3EDE-4A27-BF46-34E036599C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD2A370-242C-428C-8C19-96284207850A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD2A370-242C-428C-8C19-96284207850A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD2A370-242C-428C-8C19-96284207850A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD2A370-242C-428C-8C19-96284207850A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1954EFD5-1D3B-4017-9869-014FD88CAE94} = {0628B656-35D7-46C4-9B5D-2020B7BEC3FA}
+		{813C8BEC-34C2-4C90-BC0C-94C93D5F7F96} = {C76C4C2C-3CA8-4330-9197-8775441B05F4}
+		{2E0DCB4B-A07B-49B5-A318-A756848F62D6} = {C76C4C2C-3CA8-4330-9197-8775441B05F4}
+		{9B0DA175-605D-4081-8263-CBEF9C271611} = {0BF24FBB-55B4-4A21-9289-481F75F4E367}
+		{0232AB55-E8F5-47D0-973F-E3F8396ED856} = {0BF24FBB-55B4-4A21-9289-481F75F4E367}
+		{0AD057D6-1479-4E34-A78E-21D83037C5FC} = {7023BFB6-E7C8-49F7-96DE-C1D1A9C52F4A}
+		{CB3B7D40-0721-43EF-A220-DF8D1B783A3C} = {62C0F91C-D485-40FE-AA6F-DD945B960F92}
+		{1A69D8A2-3EDE-4A27-BF46-34E036599C4A} = {62C0F91C-D485-40FE-AA6F-DD945B960F92}
+		{CDD2A370-242C-428C-8C19-96284207850A} = {7023BFB6-E7C8-49F7-96DE-C1D1A9C52F4A}
+	EndGlobalSection
+EndGlobal

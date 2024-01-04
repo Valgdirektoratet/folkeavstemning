@@ -1,0 +1,32 @@
+{
+  "id" : "fb00acbf-48be-463b-a058-222fecafcb7d",
+  "name" : "rest_v2_personer",
+  "request" : {
+    "url" : "/rest/v2/personer",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"personidentifikatorer\":[\"29867897915\",\"29870199811\",\"29875698387\",\"29876498373\",\"29877996547\",\"29881548753\",\"29887897490\",\"29888898202\",\"29889897870\",\"29892048353\",\"29892349604\",\"29894497694\",\"29894498720\",\"29894997336\",\"29905297366\",\"29906095694\",\"29907298297\",\"29925699320\",\"29927298781\",\"30812248576\",\"30830147280\",\"30834198939\",\"30837796594\",\"30847799893\",\"30852249672\",\"30855799746\",\"30865099548\",\"30869198435\",\"30882148838\",\"30884099176\",\"30896099465\",\"30896696919\",\"30900099424\",\"30903149325\",\"30908097862\",\"30908597504\",\"30910099686\",\"30914698053\",\"30915396956\",\"30916199232\",\"30917699689\",\"30921749607\",\"30924698043\",\"30925597852\",\"31815199971\",\"31818899206\",\"31819898289\",\"31831248486\",\"31834597058\",\"31834895423\",\"31836899159\",\"31838299019\",\"31855399701\",\"31855799947\",\"31859396839\",\"31870148901\",\"31874899081\",\"31876096024\",\"31889198969\",\"31903649863\",\"31904199659\",\"31904893814\",\"31927797960\"],\"inkluderIkkeRegistrerte\":false}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"personer\":[{\"personidentifikator\":\"30910099686\",\"reservasjon\":\"NEI\",\"status\":\"AKTIV\",\"varslingsstatus\":\"KAN_VARSLES\",\"kontaktinformasjon\":{\"epostadresse\":\"NULLstillt@default.digdir.no\",\"epostadresse_oppdatert\":\"2023-06-10T21:00:01+02\",\"epostadresse_sist_verifisert\":\"2023-06-10T21:00:01+02\",\"mobiltelefonnummer\":\"+4799999999\",\"mobiltelefonnummer_oppdatert\":\"2023-06-10T21:00:01+02\",\"mobiltelefonnummer_sist_verifisert\":\"2023-06-10T21:00:01+02\"}},{\"personidentifikator\":\"31876096024\",\"reservasjon\":\"NEI\",\"status\":\"AKTIV\",\"varslingsstatus\":\"KAN_VARSLES\",\"kontaktinformasjon\":{\"epostadresse\":\"NULLstillt@default.digdir.no\",\"epostadresse_oppdatert\":\"2023-06-10T21:00:01+02\",\"epostadresse_sist_verifisert\":\"2023-06-10T21:00:01+02\",\"mobiltelefonnummer\":\"+4799999999\",\"mobiltelefonnummer_oppdatert\":\"2023-06-10T21:00:01+02\",\"mobiltelefonnummer_sist_verifisert\":\"2023-06-10T21:00:01+02\"}}]}",
+    "headers" : {
+      "x-content-type-options" : "nosniff",
+      "x-xss-protection" : "0",
+      "cache-control" : "no-cache, no-store, max-age=0, must-revalidate",
+      "pragma" : "no-cache",
+      "expires" : "0",
+      "strict-transport-security" : "max-age=16070400; includeSubDomains",
+      "x-frame-options" : "DENY",
+      "content-type" : "application/json",
+      "date" : "Thu, 12 Oct 2023 12:26:04 GMT",
+      "set-cookie" : "218697a41ea0dfa24b124b585cdb156e=4a71138f0eeab57d0ff00bd371db93b4; path=/; HttpOnly; Secure; SameSite=None"
+    }
+  },
+  "uuid" : "fb00acbf-48be-463b-a058-222fecafcb7d",
+  "persistent" : true,
+  "insertionIndex" : 41
+}

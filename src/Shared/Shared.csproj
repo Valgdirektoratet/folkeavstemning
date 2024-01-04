@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Shared</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" />
+    <PackageReference Include="Microsoft.OpenApi" />
+    <PackageReference Include="NodaTime" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+
+    <PackageReference Include="BCrypt.Net-Next" />
+    <PackageReference Include="Serilog" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Process" />
+    <PackageReference Include="Serilog.Enrichers.Thread" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="Serilog.Sinks.Seq" />
+  </ItemGroup>
+</Project>

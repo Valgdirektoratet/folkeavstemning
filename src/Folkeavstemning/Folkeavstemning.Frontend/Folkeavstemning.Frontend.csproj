@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>folkeavstemning</UserSecretsId>
+    <PackRpm>True</PackRpm>
+    <Description>Folkeavstemning Frontend</Description>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Folkeavstemning.Bff</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Process" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
+    <PackageReference Include="Duende.BFF" />
+    <PackageReference Include="Duende.BFF.Yarp" />
+    <PackageReference Include="Flurl.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\frontend\dist\**\*" CopyToPublishDirectory="PreserveNewest">
+      <Link>wwwroot\%(RecursiveDir)\%(FileName)%(Extension)</Link>
+    </Content>
+
+    <None Include="..\..\frontend\**\*">
+      <Link>frontend\%(RecursiveDir)\%(FileName)%(Extension)</Link>
+    </None>
+    <None Remove="..\..\frontend\node_modules\**\*" />
+    <None Remove="..\..\frontend\.vscode\**\*" />
+    <None Remove="..\..\frontend\dist\**\*" />
+    <None Update="Duende_License.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+</Project>

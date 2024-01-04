@@ -1,0 +1,24 @@
+<Project>
+    <PropertyGroup>
+        <InstallService>true</InstallService>
+        <Authors>Aksel Kvitberg (aksel.kvitberg@valg.no)</Authors>
+
+        <RpmVendor>Valgdirektoratet</RpmVendor>
+        <Prefix>/opt/$(TargetName.ToLower().Replace(".", "-"))</Prefix>
+
+        <CreateUser>True</CreateUser>
+        <UserName>folkeavstemning</UserName>
+        <PackagePrefix>$(TargetName.ToLower().Replace(".", "-"))</PackagePrefix>
+        <RpmPath>$(MSBuildThisFileDirectory)RPM\$(AssemblyName).$(Version).rpm</RpmPath>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(PackRpm)' == 'True'">
+        <Content Include="$(PackagePrefix).service" CopyToPublishDirectory="PreserveNewest">
+            <LinuxPath>/usr/lib/systemd/system/$(PackagePrefix).service</LinuxPath>
+        </Content>
+        <Content Include="application.env.sample" CopyToPublishDirectory="PreserveNewest">
+            <LinuxPath>/etc/$(PackagePrefix)/application.env.sample</LinuxPath>
+        </Content>
+        <LinuxFolder Include="/var/log/$(PackagePrefix)/" Group="folkeavstemning" Owner="folkeavstemning" RemoveOnUninstall="false" />
+    </ItemGroup>
+</Project>

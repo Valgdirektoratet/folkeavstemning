@@ -1,0 +1,342 @@
+{
+  "x-generator": "NSwag v14.0.0.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/stemmegivning/{folkeavstemningId}": {
+      "post": {
+        "tags": [
+          "Stemmegivning"
+        ],
+        "summary": "Setter kryss i manntall",
+        "operationId": "Stemmegivning_AvleggStemme",
+        "parameters": [
+          {
+            "name": "folkeavstemningId",
+            "in": "path",
+            "required": true,
+            "description": "FolkeavstemningsId der det skal avlegges stemme",
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "stemmepakke",
+          "description": "BASE64 encoded bytes - stemmepakke",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/stemmerett/stemmemottak-url": {
+      "get": {
+        "tags": [
+          "Stemmerett"
+        ],
+        "operationId": "Stemmerett_GetUrlToStemmemottak",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stemmerett/stemmerett": {
+      "get": {
+        "tags": [
+          "Stemmerett"
+        ],
+        "summary": "Sjekker hvilke folkeavstemninger brukeren har stemmerett i",
+        "operationId": "Stemmerett_GetStemmerett",
+        "responses": {
+          "200": {
+            "description": "Stemmerett for brukeren i angitt folkeavstemning",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/Stemmerett"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Brukeren er ikke autorisert",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ugyldig folkeavstemning",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/folkeavstemning": {
+      "get": {
+        "tags": [
+          "Folkeavstemning"
+        ],
+        "operationId": "Folkeavstemning_GetFolkeavstemning",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FolkeavstemningDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/keys/{folkeavstemningId}/encryption/public": {
+      "get": {
+        "tags": [
+          "KeyEndpoint"
+        ],
+        "summary": "Henter public krypteringssertifikat for valget",
+        "operationId": "KeyEndpoint_GetKeys",
+        "parameters": [
+          {
+            "name": "folkeavstemningId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoteKeys"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ugyldig folkeavstemning",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Har ikke stemmerett",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Brukeren er ikke autorisert",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Manglende nøkkel-konfigurasjon"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProblemDetails": {
+        "type": "object",
+        "additionalProperties": {
+          "nullable": true
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Stemmerett": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Ukjent",
+          "HarIkkeStemmerett",
+          "HarStemmerett",
+          "AvleggerStemme",
+          "HarKryssIManntall",
+          "ManglerInnsendtStemme",
+          "StemmegivningIkkeStartet",
+          "StemmegivningLukket"
+        ],
+        "enum": [
+          "Ukjent",
+          "HarIkkeStemmerett",
+          "HarStemmerett",
+          "AvleggerStemme",
+          "HarKryssIManntall",
+          "ManglerInnsendtStemme",
+          "StemmegivningIkkeStartet",
+          "StemmegivningLukket"
+        ]
+      },
+      "FolkeavstemningDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "folkeavstemningId": {
+            "type": "string"
+          },
+          "navn": {
+            "type": "string"
+          },
+          "informasjonHeader": {
+            "type": "string"
+          },
+          "informasjonBody": {
+            "type": "string"
+          },
+          "åpner": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lukker": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sak": {
+            "$ref": "#/components/schemas/SakDto"
+          }
+        }
+      },
+      "SakDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "beskrivelse": {
+            "type": "string"
+          },
+          "spørsmål": {
+            "type": "string"
+          },
+          "svaralternativer": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "VoteKeys": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "encryptionPublicKey": {
+            "type": "string"
+          },
+          "e": {
+            "type": "string"
+          },
+          "n": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

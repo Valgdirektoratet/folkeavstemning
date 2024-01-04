@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackRpm>True</PackRpm>
+    <Description>Stemmemottak Api</Description>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>enable</Nullable>
+
+    <OpenApiGenerateDocumentsOnBuild>true</OpenApiGenerateDocumentsOnBuild>
+    <OpenApiGenerateDocuments>true</OpenApiGenerateDocuments>
+    <OpenApiDocumentsDirectory>openapi</OpenApiDocumentsDirectory>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <RootNamespace>Stemmemottak.Api</RootNamespace>
+    <UserSecretsId>folkeavstemning</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flurl.Http" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="NSwag.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Process" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="openapi\" />
+  </ItemGroup>
+
+</Project>

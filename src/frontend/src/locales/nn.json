@@ -1,0 +1,121 @@
+{
+	"page": {
+		"title": "Folkeavstemning"
+	},
+	"aria": {
+		"aktive_folkavstemninger": "Aktive folkerøystingar",
+		"logg_ut": "Logg ut",
+		"vis_mer_informasjon": "Vis meir informasjon",
+		"vis_mindre_informasjon": "Vis mindre informasjon",
+		"navigasjon": "Meny"
+	},
+	"nav": {
+		"logg_ut": "Logg ut",
+		"hopp_til_innhold": "Hopp til innhald"
+	},
+	"button": {
+		"lukk": "Lukk",
+		"avbryt": "Avbryt",
+		"logg_inn": "Logg inn med ID-porten",
+		"gi_meg_mer_tid": "Gi meg meir tid",
+		"avgi_stemme": "Gje røyst",
+		"gå_til_avstemning": "Gå til avstemming",
+		"send_inn_stemme": "Send inn røyst",
+		"avlegger_stemme": "Avleggjar røyst..."
+	},
+	"stemmerett": {
+		"har_ikke_stemmerett": "Du har ikkje røysterett i denne folkerøystinga",
+		"har_stemmerett": "Du har røysterett i denne folkerøystinga. Du kan røyste frå 22. januar.",
+		"har_stemt": "Du har røyst i denne folkeavstemminga",
+		"send_inn_stemme_på_nytt": "Send inn røysta på nytt",
+		"avstemning_lukket": "Røystinga er avslutta"
+	},
+	"session": {
+		"inaktiv_dialog": {
+			"dialog_tittel": "Sesjonen din er i ferd med å renna ut",
+			"dialog_beskrivelse": "Di sesjonstid er snart utgått. Ver vennleg og vel om du ønskjer å få meir tid eller logga ut"
+		},
+		"logget_ut_dialog": {
+			"dialog_tittel": "Logga ut",
+			"dialog_beskrivelse": "Du er logga ut på grunn av inaktivitet."
+		}
+	},
+	"landing_view": {
+		"jumbotron_beskrivelse_del_1": "På denne sida kan alle som har røysterett til folkerøystingane i tidlegare Søgne kommune, eller tidlegare Songdalen kommune, røyste elektronisk. For å røyste må du logga inn med ID-porten (MinID, BankID, Buypass eller Commfides).",
+		"jumbotron_beskrivelse_del_2": "Det blir halde to folkerøystingar. Éin i tidlegare Søgne kommune og éin i tidlegare Songdalen kommune. Når du loggar inn kjem du direkte til den røystinga du har røysterett i.",
+		"jumbotron_beskrivelse_del_3": "Du kan ta røyste elektronisk i perioden frå 22. januar kl. 09.00 til 2. februar kl. 21.00. Kva du røystar skal vera hemmeleg, du er sjølv ansvarleg for å røystar åleine. Dersom du grunna ei funksjonsnedsetjing ikkje kan røysta åleine, kan du peika ut ein person som kan hjelpa deg. Les meir om gjennomføringa av folkerøystingane på {0}",
+		"jumbotron_link_tekst": "valg.no/folkeavstemning",
+		"hvordan_skaffe_elektronisk_id": "Korleis skaffe elektronisk ID?"
+	},
+	"aktive_folkeavstemninger": {
+		"overskrift": "Du har ikkje røysterett i nokon folkerøystingar | Du har røysterett i éin folkerøysting | Du har røysterett i {count} folkerøystingar"
+	},
+	"stemmegivning_view": {
+		"avgitt_stemme_dialog": {
+			"dialog_tittel": "Du har røysta i"
+		},
+		"bekreft_stemme_dialog": {
+			"dialog_tittel": "Stadfest val",
+			"dialog_beskrivelse_del_1": "Stadfest at du røystar:",
+			"dialog_beskrivelse_del_2": "Du vil ikkje kunna røysta på nytt."
+		},
+		"kunne_ikke_avlegge_stemme_dialog": {
+			"dialog_tittel": "Kunne ikkje røysta",
+			"lagret_lokalt_beskrivelse": "Røysta kunne ikkje bli teke akkurat no. Ver vennleg og vent litt og prøv igjen seinare.",
+			"ukjent_feil_beskrivelse": "Det har skjedd ei uventa feil. Prøv igjen senere eller med ein annen enhet.",
+			"avstemning_lukket": "Røystinga er avslutta",
+			"avstemning_ikke_startet": "Røystinga er ikkje starta",
+			"kan_ikke_lage_stemmepakke": "Kunne ikkje laga røystepakke. Kontakt Valdirektoratet for bistand",
+			"ugyldig_stemme": "Ugyldig røyst. Kontakt Valdirektoratet for bistand",
+			"har_ikke_stemmerett": "Du har ikkje røysterett i denne folkerøystinga",
+			"har_allerede_stemt": "Du har allereie gitt røyst i denne folkerøystinga"
+		},
+
+		"stemmegivning": "Røystegjeving",
+		"forside": "Framside",
+		"du_har_stemmerett_i": "Du har røysterett i {0}.",
+		"viktig_informasjon": "Du kan berre røysta éin gong. Det er viktig at du ikkje lukkar nettlesaren eller koplar frå internett før du får stadfesta at røysta er registrert",
+		"ikke_stemmerett_informasjon": "På denne sida kan alle som har røysterett i {0}, røysta si elektronisk.",
+		"ikke_stemmerett_les_mer": "Les meir om gjennomføringa av folkerøystingane på",
+		"ikke_stemmerett_link": "valg.no/folkeavstemning",
+		"avgi_stemme_i_mellom": "Du kan røysta elektronisk mellom {0} og {1}"
+	},
+	"cookie_erklæring_view": {
+		"tittel": "Valgdirektoratets erklæring om informasjonskapslar",
+		"undertittel": "Her finn du ei oversikt over Valdirektoratets bruk av informasjonskapslar for folkerøystingar.",
+		"informasjon1": "Informasjonskapslar (cookies) er små tekstfiler som blir plasserte på datamaskina di når du lastar ned ei nettside. Valdirektoratet bruker i dag informasjonskapslar til følgjande formål:",
+		"cookie_usage": {
+			"usecase1": "Autentisering og innlogging",
+			"usecase2": "Sikkerhet"
+		},
+		"informasjon2": "Når du loggar inn i folkerøystingløysinga installerer me informasjonskapslar som er nødvendige for at du skal kunna nytta deg av nettsidene våre.",
+		"informasjon3": "Bruk av cookies regulerast i ",
+		"informasjon3_link": "ekomloven § 2-7b.",
+		"tittel2": "Oversikt over informasjonskapslar",
+		"cookie1": {
+			"tittel": "Session Cookie",
+			"beskrivelse": "Denne cookien blir brukt for innlogging til folkerøystingløysinga. Cookien blir sletta idet nettlesarøkta blir avslutta eller du loggar ut av løysinga."
+		}
+	},
+	"footer": {
+		"tittel": "Kontakt",
+		"hjelpetekst": "Har du behov for hjelp? Kontakt oss på:",
+		"epost": "Epost:",
+		"om_folkeavstemninger": "Om folkerøystingar",
+		"linkToKommune": "Kommunelink",
+		"linkToPersonvernserklæring": "Personvernserklæring",
+		"telefon": "Telefon: {0}",
+		"informasjonskapsler": "Informasjonskapslar"
+	},
+	"label": {
+		"vis_mindre": "Vis mindre",
+		"vis_mer": "Vis meir"
+	},
+	"språkvalg": {
+		"språk": {
+			"nb": "Bokmål",
+			"nn": "Nynorsk"
+		},
+		"tittel": "Språk"
+	}
+}

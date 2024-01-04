@@ -1,0 +1,24 @@
+{
+  "id" : "0f7ba34f-d161-4633-b0a8-fc69e2a1e63a",
+  "name" : "folkeregisteret_api_offentligutenhjemmel_v1_uttrekk_1231d76c-fcf8-45e1-af1d-628c91536510_batch_2",
+  "request" : {
+    "url" : "/folkeregisteret/api/offentligutenhjemmel/v1/uttrekk/1231d76c-fcf8-45e1-af1d-628c91536510/batch/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "body" : "{\"feilmelding\":\"Batch med id=2 er enda ikke klar\"}",
+    "headers" : {
+      "date" : "Wed, 11 Oct 2023 11:32:23 GMT",
+      "content-type" : "application/json",
+      "Expires" : "Thu, 01 Dec 1994 16:00:00 GMT",
+      "Strict-Transport-Security" : "max-age=16070400; includeSubDomains"
+    }
+  },
+  "uuid" : "0f7ba34f-d161-4633-b0a8-fc69e2a1e63a",
+  "persistent" : true,
+  "scenarioName" : "scenario-1-folkeregisteret-api-offentligutenhjemmel-v1-uttrekk-1231d76c-fcf8-45e1-af1d-628c91536510-batch-2",
+  "requiredScenarioState" : "scenario-1-folkeregisteret-api-offentligutenhjemmel-v1-uttrekk-1231d76c-fcf8-45e1-af1d-628c91536510-batch-2-3",
+  "newScenarioState" : "scenario-1-folkeregisteret-api-offentligutenhjemmel-v1-uttrekk-1231d76c-fcf8-45e1-af1d-628c91536510-batch-2-4",
+  "insertionIndex" : 37
+}

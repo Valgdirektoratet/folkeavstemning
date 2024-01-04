@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Arial, Helvetica, sans-serif, system-ui;
+  }
+
+  * {
+    box-sizing: border-box;
+    line-height: 1.5rem;
+  }
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: swap;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined.text-xs {
+  font-size: 14px;
+}
+
+.material-symbols-outlined.text-sm {
+  font-size: 18px;
+}
+
+.material-symbols-outlined.text-lg {
+  font-size: 28px;
+}
+
+.material-symbols-outlined.text-xl {
+  font-size: 132x;
+}
