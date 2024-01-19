@@ -952,7 +952,7 @@
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "H19y0UVObUVQQ1Nn3Bb6YppvzDpY4RLF",
-    "redirectUris" : [ "/signin-oidc" ],
+    "redirectUris" : [ "*" ],
     "webOrigins" : [ "*" ],
     "notBefore" : 0,
     "bearerOnly" : false,

@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Serilog;
+using Serilog.Events;
 
 namespace Shared.Logging;
 
@@ -11,6 +12,9 @@ public static class LoggingExtensions
 
         return
             configuration
+                .Filter.ByExcluding(x=> x.Level <= LogEventLevel.Information 
+                                        && x.Properties.TryGetValue("RequestPath", out var path) 
+                                        && path.ToString().Contains("/metrics"))
                 .Enrich.FromLogContext()
                 .Enrich.WithMachineName()
                 .Enrich.WithThreadId()

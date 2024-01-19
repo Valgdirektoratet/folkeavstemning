@@ -116,7 +116,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseOpenApi();
-app.UseSwaggerUi3();
+app.UseSwaggerUi();
 
 app.UseRequestLocalization();
 
@@ -124,6 +124,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapKeyThumbprintsEndpoint();
 
 app.UseOpenTelemetryPrometheusScrapingEndpoint(context =>
 {

@@ -25,6 +25,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Spinner: typeof import('./src/components/Spinner.vue')['default']
+    StemmerettStatus: typeof import('./src/components/StemmerettStatus.vue')['default']
     StyledButton: typeof import('./src/components/StyledButton.vue')['default']
     StyledLink: typeof import('./src/components/StyledLink.vue')['default']
   }

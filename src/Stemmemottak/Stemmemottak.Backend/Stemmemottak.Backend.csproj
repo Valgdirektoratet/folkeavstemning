@@ -8,6 +8,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>Resultat.Api</RootNamespace>
     <UserSecretsId>folkeavstemning</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +41,12 @@
     <None Update="Certificates\*.pem">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
   </ItemGroup>
 
 </Project>

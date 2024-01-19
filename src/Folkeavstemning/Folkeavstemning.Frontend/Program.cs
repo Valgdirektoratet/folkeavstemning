@@ -69,14 +69,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseStaticFiles();
     app.UseRouting();
-    app.MapFallbackToFile("/index.html");
+    app.MapFallbackToFile("index.html");
 }
-
-app.UseOpenTelemetryPrometheusScrapingEndpoint(context =>
-{
-    var promConfig = context.RequestServices.GetRequiredService<IOptions<PrometheusConfig>>().Value;
-    return context.Request.Path == promConfig.Endpoint && context.Connection.LocalPort == promConfig.Port;
-});
 
 app.MapHealthChecks("_health", new HealthCheckOptions()
 {
@@ -84,6 +78,12 @@ app.MapHealthChecks("_health", new HealthCheckOptions()
 }).AllowAnonymous();
 
 app.AddDriftsmeldinger();
+
+app.UseOpenTelemetryPrometheusScrapingEndpoint(context =>
+{
+    var promConfig = context.RequestServices.GetRequiredService<IOptions<PrometheusConfig>>().Value;
+    return context.Request.Path == promConfig.Endpoint && context.Connection.LocalPort == promConfig.Port;
+});
 
 app.MapReverseProxy();
 

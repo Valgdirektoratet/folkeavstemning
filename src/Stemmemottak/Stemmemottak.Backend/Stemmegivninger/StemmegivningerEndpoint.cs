@@ -5,7 +5,7 @@ namespace Resultat.Api.Stemmegivninger;
 
 public static class StemmegivningerEndpoint
 {
-    public static void AddStemmegivningerEndpoint(this WebApplication app) =>
+    public static void MapStemmegivningerEndpoint(this WebApplication app) =>
         app.MapGet("stemmegivninger", (ResultatContext context) =>
                 context.Stemmer.GroupBy(x => x.FolkeavstemningId)
                     .Select(x => new { FolkeavstemningId = x.Key, Count = x.Count() })

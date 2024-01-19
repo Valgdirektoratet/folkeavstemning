@@ -70,7 +70,8 @@ app.UseOpenTelemetryPrometheusScrapingEndpoint(context =>
     return context.Request.Path == promConfig.Endpoint && context.Connection.LocalPort == promConfig.Port;
 });
 
-app.AddStemmegivningerEndpoint();
+app.MapStemmegivningerEndpoint();
+app.MapKeyThumbprintsEndpoint();
 
 app.MapHealthChecks("/_health", new HealthCheckOptions{
     ResponseWriter = CustomResponseWriter.WriteResponse

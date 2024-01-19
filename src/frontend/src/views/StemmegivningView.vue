@@ -6,12 +6,14 @@ import { useRoute } from 'vue-router';
 import KunneIkkeAvleggeStemmeDialog from '@/components/app/dialogs/KunneIkkeAvleggeStemmeDialog.vue';
 import { Errors } from "@/helpers/avgiStemme";
 import type { Result } from "@/helpers/result";
+import { makeFirstLetterUpperCase, makeFirstLetterLowerCase } from '@/helpers/stringOperations';
+import router from '@/router';
 const folkeavstemningStore = useFolkeavstemningStore();
 const stemmegivningStore = useStemmegivningStore();
 const authStore = useAuthStore();
 const route = useRoute();
 
-const folkeavstemningId = route.params.folkeavstemningId.toString() ?? '';
+const folkeavstemningId = makeFirstLetterUpperCase(route.params.folkeavstemningId.toString()) ?? '';
 const stemmerett = computed(() => stemmegivningStore.state.stemmeretter[folkeavstemningId ?? '']);
 const currentFolkeavstemning = folkeavstemningStore.state.folkeavstemninger.find(x => x.folkeavstemningId == folkeavstemningId);
 const valgtSvaralternativ = ref("");
@@ -21,6 +23,10 @@ const showAvgittStemmeDialog = ref(false);
 const showBekreftStemmeDialog = ref(false);
 const showKunneIkkeAvleggeStemmeDialog = ref(false);
 const reasonForFailure = ref(Errors.UkjentFeil);
+
+if(folkeavstemningStore.state.folkeavstemninger.find(x => x.folkeavstemningId === folkeavstemningId) === undefined){
+  router.push({path: "/"});
+}
 
 const isFolkeavstemningActive = computed(() => {
   // kan dette gjøres på en bedre måte? sammenligne stemmerett eller lignende?
@@ -73,18 +79,16 @@ onBeforeMount(async () => {
           <h1 class="text-4xl font-bold text-primary-500" id="main">
             {{ currentFolkeavstemning?.navn }}
           </h1>
-          <div v-if="stemmerett !== Stemmerett.HAR_IKKE_STEMMERETT">
-            <p class="text-lg max-w-[80ch]">{{ $t('stemmegivning_view.du_har_stemmerett_i', [currentFolkeavstemning?.navn]) }}
+          <div v-if="stemmerett !== Stemmerett.HAR_IKKE_STEMMERETT && authStore.state.isLoggedIn">
+            <p class="text-lg max-w-[80ch]">{{ $t('stemmegivning_view.du_har_stemmerett_i', [makeFirstLetterLowerCase(currentFolkeavstemning?.navn ?? $t('stemmegivning_view.stemmegivning'))]) }}
             </p>
             <p class="max-w-[80ch] mt-2">{{ $t('stemmegivning_view.viktig_informasjon') }}</p>
             <div class="border-b-2 mt-4" />
           </div>
           <p class="text-sm max-w-[80ch]">
-            {{ currentFolkeavstemning?.informasjonHeader }}
+            {{ $t('stemmegivning_view.hemmelig_stemmegivning') }}
           </p>
-          <p class="text-sm max-w-[80ch]" v-html="currentFolkeavstemning?.informasjonBody">
-
-          </p>
+          <p class="text-sm max-w-[80ch]" v-html="currentFolkeavstemning?.informasjonBody"></p>
           <p class="text-sm max-w-[80ch]" v-if="stemmerett === Stemmerett.HAR_IKKE_STEMMERETT">
             {{ $t('stemmegivning_view.ikke_stemmerett_informasjon', [currentFolkeavstemning?.navn]) }}
             {{ $t('stemmegivning_view.ikke_stemmerett_les_mer') }} <a
@@ -127,7 +131,7 @@ onBeforeMount(async () => {
         }}</span>
         <span v-if="stemmerett === Stemmerett.AVLEGGER_STEMME">{{ $t('button.avlegger_stemme') }}</span>
       </StyledButton>
-      <div v-if="stemmerett === Stemmerett.HAR_KRYSS_IMANNTALL && isFolkeavstemningActive"
+      <div v-if="stemmerett === Stemmerett.HAR_KRYSS_IMANNTALL"
         class="flex gap-3 items-center text-left">
         <span aria-hidden="true" class="material-symbols-outlined text-orange-500">check_circle</span>
         <p class="text-lg">
@@ -135,13 +139,16 @@ onBeforeMount(async () => {
         </p>
       </div>
 
+
       <div
         v-if="!isFolkeavstemningActive && (stemmerett === Stemmerett.STEMMEGIVNING_IKKE_STARTET || stemmerett === Stemmerett.STEMMEGIVNING_LUKKET)">
         <div class="mb-4 border bg-primary-100 rounded-lg flex gap-2 p-2">
           <span aria-hidden="true" class="material-symbols-outlined">info</span> 
-          {{ $t('stemmegivning_view.avgi_stemme_i_mellom', [$d(new Date(currentFolkeavstemning?.åpner ?? new Date()), "dayInYear"), $d(new Date(currentFolkeavstemning?.lukker ?? new Date()), "long")]) }}
+            {{ $t(stemmerett === Stemmerett.STEMMEGIVNING_IKKE_STARTET ? 'stemmegivning_view.stemmegivning_ikke_startet' : 'stemmegivning_view.stemmegivning_avsluttet', 
+            [$d(new Date(currentFolkeavstemning?.åpner ?? new Date()), "dayInYear"), 
+            $d(new Date(currentFolkeavstemning?.lukker ?? new Date()), "long")]) }}
         </div>
-        <StyledButton primary disabled>{{ $t('button.avgi_stemme') }}</StyledButton>
+        <StyledButton primary disabled v-if="stemmerett !== Stemmerett.STEMMEGIVNING_LUKKET">{{ $t('button.avgi_stemme') }}</StyledButton>
       </div>
     </Container>
 

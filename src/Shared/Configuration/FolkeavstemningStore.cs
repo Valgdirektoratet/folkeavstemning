@@ -1,4 +1,4 @@
-﻿using NodaTime;
+using NodaTime;
 using NodaTime.Extensions;
 
 namespace Shared.Configuration;
@@ -14,7 +14,7 @@ internal static class FolkeavstemningStore
             FolkeavstemningId = "Søgne",
             Navn = new(
                 "Folkeavstemning i tidligere Søgne kommune",
-                "Folkerøysting i tidligere Søgne kommune"
+                "Folkerøysting i tidlegare Søgne kommune"
             ),
             ManntallsnummerStart = 100_000,
             Åpner =  new LocalDateTime(2024, 01, 22, 09, 00, 00).WithOffset(Offset.FromHours(1)).InZone(NorwayTimezone),
@@ -53,7 +53,7 @@ internal static class FolkeavstemningStore
             FolkeavstemningId = "Songdalen",
             Navn = new(
                 "Folkeavstemning i tidligere Songdalen kommune",
-                "Folkerøysting i tidligere Songdalen kommune"),
+                "Folkerøysting i tidlegare Songdalen kommune"),
             ManntallsnummerStart = 200_000,
             Åpner =  new LocalDateTime(2024, 01, 22, 09, 00, 00).WithOffset(Offset.FromHours(1)).InZone(NorwayTimezone),
             Lukker = new LocalDateTime(2024, 02, 02, 21, 00, 00).WithOffset(Offset.FromHours(1)).InZone(NorwayTimezone),

@@ -48,7 +48,7 @@
 		"hvordan_skaffe_elektronisk_id": "Hvordan skaffe elektronisk ID?"
 	},
 	"aktive_folkeavstemninger": {
-		"overskrift": "Du har ikke stemmerett i noen folkeavstemninger | Du har stemmerett i èn folkeavstemning | Du har stemmerett i {count} folkeavstemninger"
+		"overskrift": "Du har ikke stemmerett i noen folkeavstemninger | Du har stemmerett i én folkeavstemning | Du har stemmerett i {count} folkeavstemninger"
 	},
 	"stemmegivning_view": {
 		"avgitt_stemme_dialog": {
@@ -70,7 +70,7 @@
 			"har_ikke_stemmerett": "Du har ikke stemmerett i denne folkeavstemningen",
 			"har_allerede_stemt": "Du har allerede avlagt stemme i denne folkeavstemningen"
 		},
-
+		"hemmelig_stemmegivning": "Hva du stemmer skal være hemmelig, du er selv ansvarlig for å stemme alene. Dersom du grunnet en funksjonsnedsettelse ikke kan stemme alene, kan du peke ut en person som kan hjelpe deg.",
 		"stemmegivning": "Stemmegivning",
 		"forside": "Forside",
 		"du_har_stemmerett_i": "Du har stemmerett i {0}.",
@@ -78,7 +78,8 @@
 		"ikke_stemmerett_informasjon": "På denne siden kan alle som har stemmerett i {0}, avlegge sin stemme elektronisk.",
 		"ikke_stemmerett_les_mer": "Les mer om gjennomføringen av folkeavstemningen på",
 		"ikke_stemmerett_link": "valg.no/folkeavstemning",
-		"avgi_stemme_i_mellom": "Du kan avgi din stemme elektronisk mellom {0} og {1}"
+		"stemmegivning_ikke_startet": "Avstemningen er ikke startet. Du kan avgi din stemme elektronisk mellom {0} og {1}",
+		"stemmegivning_avsluttet": "Avstemningen er avsluttet. Du kunne avgi din stemme elektronisk frem til {1}"
 	},
 	"cookie_erklæring_view": {
 		"tittel": "Valgdirektoratets erklæring om informasjonskapsler",
@@ -93,7 +94,7 @@
 		"informasjon3_link": "ekomloven § 2-7b.",
 		"tittel2": "Oversikt over informasjonskapsler",
 		"cookie1": {
-			"tittel": "Session Cookie",
+			"tittel": "__Host-folkeavstemning",
 			"beskrivelse": "Denne cookien brukes for innlogging til folkeavstemningsløsningen. Cookien slettes idet nettleserøkten avsluttes eller du logger ut av løsningen."
 		}
 	},
@@ -105,7 +106,8 @@
 		"linkToKommune": "Kommunelink",
 		"linkToPersonvernserklæring": "Personvernserklæring",
 		"telefon": "Telefon: {0}",
-		"informasjonskapsler": "Informasjonskapsler"
+		"informasjonskapsler": "Informasjonskapsler",
+		"linkToTilgjengelighetserklæring": "Tilgjengelighetserklæring"
 	},
 	"label": {
 		"vis_mindre": "Vis mindre",
@@ -116,6 +118,6 @@
 			"nb": "Bokmål",
 			"nn": "Nynorsk"
 		},
-		"tittel": "Språk"
+		"tittel": "Målform"
 	}
 }

@@ -70,7 +70,7 @@
 			"har_ikke_stemmerett": "Du har ikkje røysterett i denne folkerøystinga",
 			"har_allerede_stemt": "Du har allereie gitt røyst i denne folkerøystinga"
 		},
-
+		"hemmelig_stemmegivning": "Kva du røyste skal vera hemmeleg, du er sjølv ansvarleg for å røyste åleine. Dersom du grunna ei funksjonsnedsetjing ikkje kan røyste åleine, kan du peika ut ein person som kan hjelpa deg.",
 		"stemmegivning": "Røystegjeving",
 		"forside": "Framside",
 		"du_har_stemmerett_i": "Du har røysterett i {0}.",
@@ -78,7 +78,8 @@
 		"ikke_stemmerett_informasjon": "På denne sida kan alle som har røysterett i {0}, røysta si elektronisk.",
 		"ikke_stemmerett_les_mer": "Les meir om gjennomføringa av folkerøystingane på",
 		"ikke_stemmerett_link": "valg.no/folkeavstemning",
-		"avgi_stemme_i_mellom": "Du kan røysta elektronisk mellom {0} og {1}"
+		"stemmegivning_ikke_startet": "Avstemminga er ikkje starta. Du kan røysta elektronisk mellom {0} og {1}",
+		"stemmegivning_avsluttet": "Avstemminga er avslutta. Du kunne røysta elektronisk fram til {1}"
 	},
 	"cookie_erklæring_view": {
 		"tittel": "Valgdirektoratets erklæring om informasjonskapslar",
@@ -93,7 +94,7 @@
 		"informasjon3_link": "ekomloven § 2-7b.",
 		"tittel2": "Oversikt over informasjonskapslar",
 		"cookie1": {
-			"tittel": "Session Cookie",
+			"tittel": "__Host-folkeavstemning",
 			"beskrivelse": "Denne cookien blir brukt for innlogging til folkerøystingløysinga. Cookien blir sletta idet nettlesarøkta blir avslutta eller du loggar ut av løysinga."
 		}
 	},
@@ -105,7 +106,8 @@
 		"linkToKommune": "Kommunelink",
 		"linkToPersonvernserklæring": "Personvernserklæring",
 		"telefon": "Telefon: {0}",
-		"informasjonskapsler": "Informasjonskapslar"
+		"informasjonskapsler": "Informasjonskapslar",
+		"linkToTilgjengelighetserklæring": "Tilgjengelighetserklæring"
 	},
 	"label": {
 		"vis_mindre": "Vis mindre",
@@ -116,6 +118,6 @@
 			"nb": "Bokmål",
 			"nn": "Nynorsk"
 		},
-		"tittel": "Språk"
+		"tittel": "Målform"
 	}
 }

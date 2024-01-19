@@ -26,7 +26,7 @@ public class ManntallEndpoint
                 x.PostboksAdresse.Postboks, Postboks_Postnummer = x.PostboksAdresse.Postnummer, Postboks_Poststed = x.PostboksAdresse.Poststed,
                 Postadresse = x.VegadresseForPost.Adressenavn, Postadressenummer = x.VegadresseForPost.Adressenummer, PostadressePostnummer = x.VegadresseForPost.Postnummer, PostadressePoststed = x.VegadresseForPost.Poststed, PostadresseCoAdresse = x.VegadresseForPost.CoAdressenavn,
                 OppholdsAdresse_Gradering = x.Oppholdsadresse.Adressegradering, OppholdsAdresse_Adressenavn=x.Bostedsadresse.Adressenavn, OppholdsAdresse_Adressenummer=x.Bostedsadresse.Adressenummer, OppholdsAdresse_Postnummer = x.Bostedsadresse.Postnummer, OppholdsAdresse_Poststed = x.Bostedsadresse.Poststed,
-                x.DigitalKontakt.Mobiltelefonnummer, x.DigitalKontakt.Epostadresse,
+                x.DigitalKontakt.Mobiltelefonnummer, x.DigitalKontakt.Epostadresse, x.DigitalKontakt.Språk
 #pragma warning restore CS8602 // Dereference of a possibly null reference - EF Query
             })
             .ToListAsync(token);

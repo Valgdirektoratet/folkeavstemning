@@ -6,6 +6,7 @@ using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Primitives;
 
 namespace Shared.Authentication;
 
@@ -24,8 +25,14 @@ public class BasicAuthenticationHandler : AuthenticationHandler<BasicAuthenticat
         {
             Request.Headers.TryGetValue("Authorization", out var authHeaderValue);
 
-            var authHeader = AuthenticationHeaderValue.Parse(authHeaderValue.ToString());
-            if (authHeader.Parameter != null)
+            if (StringValues.IsNullOrEmpty(authHeaderValue))
+            {
+                return Task.FromResult(AuthenticateResult.NoResult());
+            }
+            
+            AuthenticationHeaderValue.TryParse(authHeaderValue.ToString(), out var authHeader);
+            
+            if (authHeader?.Parameter is not null)
             {
                 var credentials = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter)).Split(':');
                 var username = credentials.FirstOrDefault();

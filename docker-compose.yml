@@ -80,8 +80,13 @@ services:
       - ACCEPT_EULA=Y
       - SEQ_CERTIFICATES_DEFAULTPASSWORD=changeit
     ports:
-      - "54600:80"
-      - "54601:5341"
+      - "54601:45341"
+      - "54600:443"
+    volumes:
+      - ./docker/cert/dev-localhost-docker.crt:/data/Certificates/443.pem
+      - ./docker/cert/dev-localhost-docker.key:/data/Certificates/443-key.pem
+      - ./docker/cert/dev-localhost-docker.crt:/data/Certificates/45341.pem
+      - ./docker/cert/dev-localhost-docker.key:/data/Certificates/45341-key.pem
 
   wiremock:
     image: wiremock/wiremock:latest
@@ -94,20 +99,25 @@ services:
   prometheus:
     image: prom/prometheus
     ports:
-      - "54610:9090"
+      - "54610:54610"
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./docker/prometheus/web-config.yml:/etc/prometheus/web-config.yml
       - ./docker/cert/dev-localhost-docker.key:/etc/cert/dev-localhost-docker.key
       - ./docker/cert/dev-localhost-docker.crt:/etc/cert/dev-localhost-docker.crt
     command:
       - --config.file=/etc/prometheus/prometheus.yml
+      - --web.config.file=/etc/prometheus/web-config.yml
+      - --web.listen-address=:54610
 
   grafana:
       image: grafana/grafana-enterprise
       ports:
         - "54620:3000"
       volumes:
-        - ./docker/grafana:/var/lib/grafana
+        #- ./docker/grafana:/var/lib/grafana
+        - ./docker/grafana/dashboards:/etc/grafana/provisioning/dashboards
+        - ./docker/grafana/datasources:/etc/grafana/provisioning/datasources
         - ./docker/cert/dev-localhost-docker.key:/etc/grafana/dev-localhost-docker.key
         - ./docker/cert/dev-localhost-docker.crt:/etc/grafana/dev-localhost-docker.crt
       environment: 

@@ -8,6 +8,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
     <RootNamespace>Folkeavstemning.Bff</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="..\..\..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
     <Content Include="..\..\frontend\dist\**\*" CopyToPublishDirectory="PreserveNewest">
       <Link>wwwroot\%(RecursiveDir)\%(FileName)%(Extension)</Link>
     </Content>

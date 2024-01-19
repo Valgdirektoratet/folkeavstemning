@@ -159,51 +159,22 @@ public class ApiException : Exception
     public override string ToString() => $"HTTP Response: \n\n{Response}\n\n{base.ToString()}";
 }
 
-public class ApiException<TResult> : ApiException
-{
-    public ApiException(string message, int statusCode, string response, IReadOnlyDictionary<string, IEnumerable<string>> headers, TResult result,
-        Exception innerException)
-        : base(message, statusCode, response, headers, innerException)
-    {
-        Result = result;
-    }
-
-    public TResult Result { get; private set; }
-}
-
 public class GetUsersResource
 {
-    private IDictionary<string, object>? _additionalProperties;
-
     [JsonProperty("personer", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public ICollection<UserResource>? Personer { get; set; }
-
-    [JsonExtensionData]
-    public IDictionary<string, object> AdditionalProperties
-    {
-        get => _additionalProperties ??= new Dictionary<string, object>();
-        set => _additionalProperties = value;
-    }
 }
 
 public class UserResource
 {
-    private IDictionary<string, object>? _additionalProperties;
-
     [JsonProperty("personidentifikator", Required = Required.Always)]
     [Required(AllowEmptyStrings = true)]
     public string Personidentifikator { get; set; } = default!;
 
-    [JsonProperty("reservasjon", Required = Required.Always)]
+    [JsonProperty("reservasjon", Required = Required.DisallowNull)]
     [Required(AllowEmptyStrings = true)]
     [JsonConverter(typeof(StringEnumConverter))]
     public UserResourceReservasjon Reservasjon { get; set; }
-
-    [JsonProperty("reservasjonstidspunkt", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset Reservasjonstidspunkt { get; set; }
-
-    [JsonProperty("reservasjon_oppdatert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset ReservasjonOppdatert { get; set; }
 
     [JsonProperty("status", Required = Required.Always)]
     [Required(AllowEmptyStrings = true)]
@@ -217,33 +188,12 @@ public class UserResource
     [JsonProperty("kontaktinformasjon", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public ContactInfoResource Kontaktinformasjon { get; set; } = default!;
 
-    [JsonProperty("digital_post", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DigitalPostResource DigitalPost { get; set; } = default!;
-
-    /// <summary>
-    ///     Base64 encoded certificate
-    /// </summary>
-    [JsonProperty("sertifikat", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public string Sertifikat { get; set; } = default!;
-
     [JsonProperty("spraak", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public string Språk { get; set; } = default!;
-
-    [JsonProperty("spraak_oppdatert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset SpraakOppdatert { get; set; }
-
-    [JsonExtensionData]
-    public IDictionary<string, object> AdditionalProperties
-    {
-        get => _additionalProperties ??= new Dictionary<string, object>();
-        set => _additionalProperties = value;
-    }
 }
 
 public class GetUsersRequestV2
 {
-    private IDictionary<string, object>? _additionalProperties;
-
     [JsonProperty("personidentifikatorer", Required = Required.Always)]
     [Required]
     [MinLength(1)]
@@ -253,12 +203,6 @@ public class GetUsersRequestV2
     [JsonProperty("inkluderIkkeRegistrerte", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public bool InkluderIkkeRegistrerte { get; set; }
 
-    [JsonExtensionData]
-    public IDictionary<string, object> AdditionalProperties
-    {
-        get => _additionalProperties ??= new Dictionary<string, object>();
-        set => _additionalProperties = value;
-    }
 }
 
 public enum UserResourceStatus
@@ -280,32 +224,11 @@ public enum UserResourceReservasjon
 
 public class ContactInfoResource
 {
-    private IDictionary<string, object>? _additionalProperties;
-
     [JsonProperty("epostadresse", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public string Epostadresse { get; set; } = default!;
 
-    [JsonProperty("epostadresse_oppdatert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset EpostadresseOppdatert { get; set; }
-
-    [JsonProperty("epostadresse_sist_verifisert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset EpostadresseSistVerifisert { get; set; }
-
     [JsonProperty("mobiltelefonnummer", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
     public string Mobiltelefonnummer { get; set; } = default!;
-
-    [JsonProperty("mobiltelefonnummer_oppdatert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset MobiltelefonnummerOppdatert { get; set; }
-
-    [JsonProperty("mobiltelefonnummer_sist_verifisert", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public DateTimeOffset MobiltelefonnummerSistVerifisert { get; set; }
-
-    [JsonExtensionData]
-    public IDictionary<string, object> AdditionalProperties
-    {
-        get => _additionalProperties ??= new Dictionary<string, object>();
-        set => _additionalProperties = value;
-    }
 }
 
 public enum UserResourceVarslingsstatus
@@ -314,23 +237,4 @@ public enum UserResourceVarslingsstatus
     KanIkkeVarsles = 0,
 
     [EnumMember(Value = "KAN_VARSLES")] KanVarsles = 1
-}
-
-public class DigitalPostResource
-{
-    private IDictionary<string, object>? _additionalProperties;
-
-    [JsonProperty("postkasseadresse", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    [StringLength(100)]
-    public string Postkasseadresse { get; set; } = default!;
-
-    [JsonProperty("postkasseleverandoeradresse", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-    public string Postkasseleverandoeradresse { get; set; } = default!;
-
-    [JsonExtensionData]
-    public IDictionary<string, object> AdditionalProperties
-    {
-        get => _additionalProperties ??= new Dictionary<string, object>();
-        set => _additionalProperties = value;
-    }
 }

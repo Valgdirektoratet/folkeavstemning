@@ -44,9 +44,10 @@ public static class ConfigureDuendeBff
             })
             .AddOpenIdConnect("oidc", options =>
             {
-                #if DEBUG
-                options.RequireHttpsMetadata = false;
-                #endif
+                if (builder.Environment.IsDevelopment())
+                {
+                    options.RequireHttpsMetadata = false;
+                }
 
                 options.Authority = configuration["OIDC:Authority"];
 

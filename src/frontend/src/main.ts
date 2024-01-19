@@ -37,6 +37,8 @@ const i18n = createI18n({
 				year: "numeric",
 				month: "long",
 				day: "numeric",
+				hour: 'numeric', 
+				minute: 'numeric'
 			},
 			dayInYear: {
 				month: "long",
